@@ -44,8 +44,7 @@ const App = () => {
 		axios
 			.put(
 				`http://localhost:8000/sites/${editConstruction.id}`,
-				editConstruction
-			)
+				editConstruction)
 			.then((res) => {
 				getData()
 			})
@@ -66,7 +65,7 @@ const App = () => {
 						<div className='classContainer' key={construction.id}>
 							<h3 className='jobName' >Name: {construction.job}</h3>
 							<h4 className='fenceFtg' >feet of silt fence used: {construction.footage}</h4>
-							<Edit className='editBtn' handleUpdate={handleUpdate} character={construction} />
+							<Edit className='editBtn' handleUpdate={handleUpdate} construction={construction} />
 							<button className='deleteBtn' onClick={handleDelete} value={construction.id}>
 								delete site
 							</button>

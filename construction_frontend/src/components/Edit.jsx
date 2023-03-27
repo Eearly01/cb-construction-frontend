@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
 const Edit = (props) => {
-	let emptyConstruction = { name: '', age: '', main_power: '', team: '' }
-	const [construction, setConstruction] = useState(emptyConstruction)
+	const emptyConstruction = { job: '', footage: '' }
+	const [construction, setConstruction] = useState(props.construction)
 
-	// edit function
 	const handleChange = (event) => {
-		setConstruction({...props.construction,
+		setConstruction({
+			...construction,
 			[event.target.name]: event.target.value,
 		})
 	}
@@ -19,7 +19,7 @@ const Edit = (props) => {
 	return (
 		<>
 			<details>
-				<summary>Edit construction from</summary>
+				<summary>Edit construction form</summary>
 				<form onSubmit={handleSubmit}>
 					<label htmlFor='job'>Job: </label>
 					<input
