@@ -58,15 +58,16 @@ const App = () => {
 
 	return (
 		<>
+		<h1 className='pageTitle'>Construction Tracker</h1>
 			<Add handleCreate={handleCreate} />
-			<div className='character'>
+			<div className='container'>
 				{construction.map((construction) => {
 					return (
-						<div className='' key={construction.id}>
-							<h3>Name: {construction.job}</h3>
-							<h4>feet of silt fence used: {construction.footage}</h4>
-							<Edit handleUpdate={handleUpdate} character={construction} />
-							<button onClick={handleDelete} value={construction.id}>
+						<div className='classContainer' key={construction.id}>
+							<h3 className='jobName' >Name: {construction.job}</h3>
+							<h4 className='fenceFtg' >feet of silt fence used: {construction.footage}</h4>
+							<Edit className='editBtn' handleUpdate={handleUpdate} character={construction} />
+							<button className='deleteBtn' onClick={handleDelete} value={construction.id}>
 								delete site
 							</button>
 						</div>
