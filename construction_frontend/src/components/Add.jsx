@@ -23,7 +23,7 @@ const Add = (props) => {
 				<input
 					type='text'
 					name='job'
-					value={construction.name}
+					value={construction.job}
 					onChange={handleChange}
 				/>
 				<br />
@@ -32,7 +32,7 @@ const Add = (props) => {
 				<input
 					type='number'
 					name='footage'
-					value={construction.age}
+					value={construction.footage}
 					onChange={handleChange}
 				/>
 				<input type='submit' />
