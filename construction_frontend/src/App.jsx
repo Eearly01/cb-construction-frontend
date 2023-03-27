@@ -57,14 +57,15 @@ const App = () => {
 
 	return (
 		<>
-			<h1>input form</h1>
+			<h1 className="mainTitle">Job Site Tracker</h1>
+			<h3 className="input">input form</h3>
 			<Add handleCreate={handleCreate} />
-			<div>
-				<h4>job name: {construction.job}</h4>
-				<h4>silt fence used: {construction.footage} FT</h4>
-				<Edit handleUpdate={handleUpdate} construction={construction} />
+			<div className="container">
+				<h4 className="jobName">job name: {construction.job}</h4>
+				<h4 className="fence">silt fence used: {construction.footage} FT</h4>
+				<Edit className="editBtn" handleUpdate={handleUpdate} construction={construction} />
 				{/* delete button */}
-				<button onClick={handleDelete} value={construction.id}>
+				<button  className="deleteBtn" onClick={handleDelete} value={construction.id}>
 					delete character
 				</button>
 			</div>
