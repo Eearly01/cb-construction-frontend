@@ -58,6 +58,7 @@ const App = () => {
 
 	return (
 		<>
+		<section className="root">
 		<h1 className='pageTitle'>Construction Tracker</h1>
 			<Add handleCreate={handleCreate} />
 				<section className='cards'>
@@ -72,7 +73,7 @@ const App = () => {
 							<Card.Text className='fenceFtg' >Feet of silt fence used: {construction.footage} ft</Card.Text>
 							<Edit className='editBtn' handleUpdate={handleUpdate} construction={construction} />
 							<button className='deleteBtn' onClick={handleDelete} value={construction.id}>
-								delete site
+								Delete Job Site
 							</button>
 						</Card.Body>
 						</Card>
@@ -80,6 +81,7 @@ const App = () => {
 				})}
 			</div>
 			</ul>
+			</section>
 			</section>
 		</>
 	)

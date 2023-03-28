@@ -19,9 +19,9 @@ const Edit = (props) => {
 	return (
 		<>
 			<details>
-				<summary>Edit construction form</summary>
+				<summary className="editJob" >Edit Job Site Info</summary> <br/>
 				<form onSubmit={handleSubmit}>
-					<label htmlFor='job'>Job: </label>
+					<label htmlFor='job'>Job: </label> <br/>
 					<input
 						type='text'
 						name='job'
@@ -30,15 +30,15 @@ const Edit = (props) => {
 					/>
 					<br />
 					<br />
-					<label htmlFor='footage'>silt fence used: </label>
+					<label htmlFor='footage'>Silt Fence Used: </label>
 					<input
 						type='number'
 						name='footage'
 						value={construction.footage}
 						onChange={handleChange}
 					/>
-
-					<input type='submit' />
+					<br/>
+					<input type='submit' className="editBtn"/>
 				</form>
 			</details>
 		</>
