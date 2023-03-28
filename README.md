@@ -64,8 +64,8 @@
 - As a user i should be able to edit the cards info
 
 ## Wire Framework
-<img src="img/Screenshot_20230324_011746.png" width=300 height=400/>
-![Wire Framework](img/Screenshot_20230324_011825.png)
+<img src="img/Screenshot_20230324_011746.png" width=400 height=500/>
+<img src="img/Screenshot_20230324_011825.png" width=400 height=500/>
 
 ## Live link
 
