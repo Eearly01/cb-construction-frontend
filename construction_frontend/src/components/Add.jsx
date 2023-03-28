@@ -18,8 +18,8 @@ const Add = (props) => {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor='job'>Name: </label>
+			<form onSubmit={handleSubmit} className="form">
+				<label htmlFor='job' className='name'>Name: </label>
 				<input
 					type='text'
 					name='job'
@@ -28,7 +28,7 @@ const Add = (props) => {
 				/>
 				<br />
 				<br />
-				<label htmlFor='footage'>silt fence used: </label>
+				<label htmlFor='footage'>Silt fence used: </label>
 				<input
 					type='number'
 					name='footage'

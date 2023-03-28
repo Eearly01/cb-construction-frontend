@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Card from "react-bootstrap/Card";
 
 // connect components
 import Add from './components/Add'
@@ -59,20 +60,27 @@ const App = () => {
 		<>
 		<h1 className='pageTitle'>Construction Tracker</h1>
 			<Add handleCreate={handleCreate} />
+				<section className='cards'>
+				<ul className="card-container">
 			<div className='container'>
 				{construction.map((construction) => {
 					return (
-						<div className='classContainer' key={construction.id}>
-							<h3 className='jobName' >Name: {construction.job}</h3>
-							<h4 className='fenceFtg' >feet of silt fence used: {construction.footage}</h4>
+						<Card>
+							<Card.Body>
+						{/* <div> key={construction.id} </div> */}
+							<Card.Text className='jobName'> Name: {construction.job}</Card.Text>
+							<Card.Text className='fenceFtg' >Feet of silt fence used: {construction.footage} ft</Card.Text>
 							<Edit className='editBtn' handleUpdate={handleUpdate} construction={construction} />
 							<button className='deleteBtn' onClick={handleDelete} value={construction.id}>
 								delete site
 							</button>
-						</div>
+						</Card.Body>
+						</Card>
 					)
 				})}
 			</div>
+			</ul>
+			</section>
 		</>
 	)
 }
