@@ -65,8 +65,8 @@
 
 ## Wire Framework
 
-![Wire Framework](img/Screenshot_20230324_011746.png)
-![Wire Framework](img/Screenshot_20230324_011825.png)
+![Wire Framework]("img/Screenshot_20230324_011746.png" align=center)
+![Wire Framework](img/Screenshot_20230324_011825.png | width=300 hight=400)
 
 ## Live link
 
