@@ -1,3 +1,9 @@
+@mixin cards{ // mixins are blocks of css you want to define and use later
+  text-align: center;
+  color: azure;
+  font-size: 20px;
+}
+
 .pageTitle {
   text-align: center;
   font-size: 60px;
@@ -13,7 +19,7 @@
   margin-top: 15px;
 }
 
-/* .cards {
+/* .root {
   background-image: url('https://i.imgur.com/YLvSyEa.jpg');
 } */
 
@@ -44,13 +50,9 @@
 }
 
 .jobName {
-  text-align: center;
-  color: azure;
-  font-size: 20px;
+  @include cards;
 }
 
 .fenceFtg {
-  text-align: center;
-  color: azure;
-  font-size: 20px;
+  @include cards;
 }
