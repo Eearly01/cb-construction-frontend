@@ -46,9 +46,12 @@
 
 ## Unsolved problems
 
-- 
+- cards are not the the same hight {x}
+
+-
 
 ## Notes for latter
+
 - we want to add things to the input form for other jobs on the site like street sweepings, machinery used, and people that worked on the job.
 
 ## User stories
@@ -64,12 +67,13 @@
 - As a user i should be able to edit the cards info
 
 ## Wire Framework
+
 <img src="img/Screenshot_20230324_011746.png" width=400 height=500/>
 <img src="img/Screenshot_20230324_011825.png" width=400 height=500/>
 
 ## Live link
 
-- 
+-
 
 ## Stretch goals
 
