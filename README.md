@@ -73,7 +73,8 @@
 
 ## Live link
 
--
+- backend - https://cb-construction-backend.onrender.com/
+- frontend -
 
 ## Stretch goals
 
