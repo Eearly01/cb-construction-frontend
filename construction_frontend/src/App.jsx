@@ -2,6 +2,7 @@ import './App.scss';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Card from "react-bootstrap/Card";
+import Register from './components/Register';
 
 // connect components
 import Add from './components/Add'
@@ -60,6 +61,7 @@ const App = () => {
 		<>
 		<section className="root">
 		<h1 className='pageTitle'>Construction Tracker</h1>
+		<Register />
 			<Add handleCreate={handleCreate} />
 				<section className='cards'>
 				<ul className="card-container">
