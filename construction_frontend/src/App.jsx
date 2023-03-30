@@ -64,14 +64,15 @@ const App = () => {
 		<h1 className='pageTitle'>Construction Tracker</h1>
 		<Register />
 			<Add handleCreate={handleCreate} />
+			<Search
+			construction={construction}
+			getData={getData}
+			/>
 				<section className='cards'>
 				<ul className="card-container">
-			<div className='container'>
-				<Search
-				construction={construction}
-				getData={getData}
 				
-				/>
+			<div className='container'>
+				
 				{construction.map((construction) => {
 					return (
 						<Card>
