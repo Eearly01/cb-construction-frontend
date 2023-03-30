@@ -9,21 +9,27 @@ function Register() {
 	});
 
 	const handleChange = (e) => {
-		setFormData({ ...formData, [e.target.name]: e.target.value });
+		setFormData({ ...formData, [e.target.username]: e.target.value });
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		axios
-			.post('http://localhost:8000/register/', formData)
-			.then((response) => {
-        console.log(response.data)
-				console.log(response.data);
-			})
-			.catch((error) => {
-				console.log(error.response.data);
-			});
-	};
+	const handleSubmit = async (e) => {
+		e.preventDefault()
+
+		try {
+			const response = await axios.post(
+				'http://localhost:8000/register/',
+				formData
+			)
+
+			// If the registration was successful, save the authentication token to localStorage
+			localStorage.setItem('token', response.data.token)
+
+			// Redirect the user to the home page
+			window.location.href = '/'
+		} catch (error) {
+			console.log(error)
+		}
+	}
 
 	return (
 		<>
@@ -34,7 +40,9 @@ function Register() {
 						type='text'
 						name='username'
 						value={formData.username}
-						onChange={handleChange}
+						onChange={(e) =>
+							setFormData({ ...formData, username: e.target.value })
+						}
 					/>
 				</label>
 				<label>
@@ -43,7 +51,9 @@ function Register() {
 						type='email'
 						name='email'
 						value={formData.email}
-						onChange={handleChange}
+						onChange={(e) =>
+							setFormData({ ...formData, email: e.target.value })
+						}
 					/>
 				</label>
 				<label>
@@ -52,13 +62,15 @@ function Register() {
 						type='password'
 						name='password'
 						value={formData.password}
-						onChange={handleChange}
+						onChange={(e) =>
+							setFormData({ ...formData, password: e.target.value })
+						}
 					/>
 				</label>
 				<button type='submit'>Register</button>
 			</form>
 		</>
-	);
+	)
 }
 
 export default Register;
