@@ -14,16 +14,21 @@ const App = () => {
 
 	// create people function
 	const handleCreate = (newConstruction) => {
-		axios.post('http://localhost:8000/sites', newConstruction).then((res) => {
-			console.log(res)
-			getData()
-		})
+		axios
+			.post(
+				'https://cb-construction-backend.onrender.com/sites',
+				newConstruction
+			)
+			.then((res) => {
+				console.log(res)
+				getData()
+			})
 	}
 
 	// get construction data
 	const getData = () => {
 		axios
-			.get('http://localhost:8000/sites')
+			.get('https://cb-construction-backend.onrender.com/sites')
 			.then(
 				(res) => setConstruction(res.data),
 				(err) => console.error(err)
@@ -35,7 +40,9 @@ const App = () => {
 
 	const handleDelete = (event) => {
 		axios
-			.delete(`http://localhost:8000/sites/${event.target.value}`)
+			.delete(
+				`https://cb-construction-backend.onrender.com/sites/${event.target.value}`
+			)
 			.then((res) => {
 				getData()
 			})
@@ -46,8 +53,9 @@ const App = () => {
 		console.log(editConstruction)
 		axios
 			.put(
-				`http://localhost:8000/sites/${editConstruction.id}`,
-				editConstruction)
+				`https://cb-construction-backend.onrender.com/sites/${editConstruction.id}`,
+				editConstruction
+			)
 			.then((res) => {
 				getData()
 			})
@@ -62,12 +70,12 @@ const App = () => {
 		<>
 		<section className="root">
 		<h1 className='pageTitle'>Construction Tracker</h1>
-		<Register />
+		{/* <Register /> */}
 			<Add handleCreate={handleCreate} />
-			<Search
+			{/* <Search
 			construction={construction}
 			getData={getData}
-			/>
+			/> */}
 				<section className='cards'>
 				<ul className="card-container">
 				

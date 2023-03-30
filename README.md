@@ -82,7 +82,7 @@
 
 - Adding google locations {}
 
-- User login and authentication {}
+- User login {} and authentication {}
 
 - Adding other cards for other work {}
 
