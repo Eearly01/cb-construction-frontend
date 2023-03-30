@@ -53,6 +53,10 @@
   margin-top: -50px;
 } 
 
+.searchForm {
+  @include forms;
+}
+
 .container {
   text-align: center;
   margin-top: 10px;

@@ -24,15 +24,14 @@ function Search(props) {
 
 	return (
 		<>
-			<input type='text' value={searchQuery} onChange={handleSearchQuery} />
-			<form onSubmit={handleSubmit} className='searchForm'>
-				<Form.Label htmlFor='job' className='searchBar'> search job name: </Form.Label>{' '}
-				<br />
+			{/* <input type='text' value={searchQuery} onChange={handleSearchQuery} /> */}
+			<form onSubmit={props.handleSubmit} className='searchForm'>
+				<Form.Label htmlFor='job' className='searchBar'> Search Job Name: </Form.Label>{' '}
 				<input
 					type='text'
 					name='job'
 					value={props.construction.job}
-					onSubmit={handleSubmit}
+					onSubmit={props.handleSubmit}
 					className='searchControl'
 				/>
 				<br />
