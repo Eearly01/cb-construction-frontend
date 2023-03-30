@@ -48,7 +48,9 @@
 
 - cards are not the the same hight {x}
 
--
+- we wanted to implement a search bar that filtered through the array and only show what we searched for.
+
+- we want to add a user log in and registers all thats left is to connect the two
 
 ## Notes for latter
 
@@ -84,4 +86,4 @@
 
 - Adding other cards for other work {}
 
-- Adding icons {}
+- Adding search bar {}

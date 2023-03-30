@@ -1,46 +1,43 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+
 import Form from 'react-bootstrap/Form'
 
-function Search(props) {
-	const [searchQuery, setSearchQuery] = useState('')
-	const [searchResults, setSearchResults] = useState([])
+function SearchBar(props) {
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState([])
 
-	const handleSearchQuery = (searchData) => {
-		if (searchQuery === props.construction.job) {
-			axios
-				.get(`http://localhost:8000/sites/${searchData.id}`, searchData)
-				.then((res) => {
-					props.getData()
-				})
-		} else {
-			console.log('error somethings wrong in search component')
-		}
-	}
-	// useEffect
-	useEffect(() => {
-		props.getData()
-	}, [])
+  const handleSearchQuery = (event) => {
+    event.preventDefault()
+    const filteredResults = props.construction.filter((construction) =>
+      construction.job.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    setSearchResults(filteredResults)
+  }
 
-	return (
-		<>
-			<input type='text' value={searchQuery} onChange={handleSearchQuery} />
-			<form onSubmit={props.handleSubmit} className='searchForm'>
-				<Form.Label htmlFor='job' className='searchBar'> search job name: </Form.Label>{' '}
-				<br />
-				<input
-					type='text'
-					name='job'
-					value={props.construction.job}
-					onSubmit={props.handleSubmit}
-					className='searchControl'
-				/>
-				<br />
-				<input type='submit' className='submitBtn' />
-			</form>
-		</>
-	)
+  return (
+    <>
+      <form onSubmit={handleSearchQuery} className='searchForm'>
+        <Form.Label htmlFor='job' className='searchBar'>
+          {' '}
+          search job name: {' '}
+        </Form.Label>{' '}
+        <br />
+        <input
+          type='text'
+          name='job'
+          value={searchQuery}
+          onChange={(event) => setSearchQuery(event.target.value)}
+          className='searchControl'
+        />
+        <br />
+        <input type='submit' className='submitBtn' />
+      </form>
+        {searchResults.map((construction) => (
+          <li key={construction.id}>{construction.job}</li>
+        ))}
+
+    </>
+  )
 }
 
-export default Search
-// need to pass down construction data, and get data. work on filter . axios call i think should be a .get function
+export default SearchBar
