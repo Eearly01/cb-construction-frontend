@@ -35,10 +35,11 @@ function Register() {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit}>
-				<label>
+			<form onSubmit={handleSubmit} className="registerForm">
+				<label className='registerUsername'>
 					Username:
 					<input
+						className='usernameInput'
 						type='text'
 						name='username'
 						value={formData.username}
@@ -47,9 +48,10 @@ function Register() {
 						}
 					/>
 				</label>
-				<label>
+				<label className='registerEmail'>
 					Email:
 					<input
+						className='usernameEmail'
 						type='email'
 						name='email'
 						value={formData.email}
@@ -58,9 +60,10 @@ function Register() {
 						}
 					/>
 				</label>
-				<label>
+				<label className='registerPassword'>
 					Password:
 					<input
+						className='usernamePassword'
 						type='password'
 						name='password'
 						value={formData.password}
@@ -69,7 +72,7 @@ function Register() {
 						}
 					/>
 				</label>
-				<button type='submit'>Register</button>
+				<button type='submit' className='registerBtn' >Register</button>
 			</form>
 		</>
 	)
