@@ -9,7 +9,7 @@
 }
 
 @mixin forms {
-  font-size: 20px;
+  font-size: 30px;
   color: #d60808;
 }
 
@@ -53,8 +53,36 @@
   margin-top: -50px;
 } 
 
+.registerForm {
+  text-align: center;
+  margin-left: 10px;
+}
+
+.registerUsername {
+  margin-left: 10px;
+}
+
+.registerEmail {
+  margin-left: 10px;
+}
+
+.registerPassword {
+  margin-left: 10px;
+}
+
+.registerBtn {
+  margin-left: 10px;
+  @include buttons();
+}
+
 .searchForm {
   @include forms;
+  text-align: center;
+}
+
+.searchBar {
+  color:black;
+  font-size: 20px;
 }
 
 .container {
