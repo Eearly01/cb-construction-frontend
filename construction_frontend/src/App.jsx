@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Card from "react-bootstrap/Card";
 import Register from './components/Register';
+import Search from './components/Search';
 
 // connect components
 import Add from './components/Add'
@@ -66,6 +67,11 @@ const App = () => {
 				<section className='cards'>
 				<ul className="card-container">
 			<div className='container'>
+				<Search
+				construction={construction}
+				getData={getData}
+				
+				/>
 				{construction.map((construction) => {
 					return (
 						<Card>
