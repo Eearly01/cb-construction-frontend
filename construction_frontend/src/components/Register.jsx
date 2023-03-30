@@ -12,24 +12,26 @@ function Register() {
 		setFormData({ ...formData, [e.target.username]: e.target.value });
 	};
 
-	const handleSubmit = async (e) => {
-		e.preventDefault()
-
-		try {
-			const response = await axios.post(
-				'http://localhost:8000/register/',
-				formData
-			)
-
-			// If the registration was successful, save the authentication token to localStorage
-			localStorage.setItem('token', response.data.token)
-
-			// Redirect the user to the home page
-			window.location.href = '/'
-		} catch (error) {
-			console.log(error)
-		}
-	}
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		axios.get('http://localhost:8000/admin/csrf/').then((response) => {
+			const csrfToken = response.data.csrfToken;
+			console.log(csrfToken);
+			axios
+				.post('http://localhost:8000/admin/register/', formData, {
+					headers: {
+						'X-CSRFToken': csrfToken,
+					},
+				})
+				.then((response) => {
+					console.log(response.data);
+					console.log(response.data);
+				})
+				.catch((error) => {
+					console.log(error.response.data);
+				});
+		});
+	};
 
 	return (
 		<>
