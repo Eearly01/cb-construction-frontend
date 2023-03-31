@@ -14,23 +14,29 @@ function Register() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		axios.get('http://localhost:8000/admin/csrf/').then((response) => {
-			const csrfToken = response.data.csrfToken;
-			console.log(csrfToken);
-			axios
-				.post('http://localhost:8000/admin/register/', formData, {
-					headers: {
-						'X-CSRFToken': csrfToken,
-					},
-				})
-				.then((response) => {
-					console.log(response.data);
-					console.log(response.data);
-				})
-				.catch((error) => {
-					console.log(error.response.data);
-				});
-		});
+		axios
+			.get('https://cb-construction-backend-sei123.onrender.com/admin/csrf/')
+			.then((response) => {
+				const csrfToken = response.data.csrfToken
+				console.log(csrfToken)
+				axios
+					.post(
+						'https://cb-construction-backend-sei123.onrender.com/register/',
+						formData,
+						{
+							headers: {
+								'X-CSRFToken': csrfToken,
+							},
+						}
+					)
+					.then((response) => {
+						console.log(response.data)
+						console.log(response.data)
+					})
+					.catch((error) => {
+						console.log(error.response.data)
+					})
+			})
 	};
 
 	return (

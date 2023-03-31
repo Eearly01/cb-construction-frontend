@@ -16,7 +16,7 @@ const App = () => {
 	const handleCreate = (newConstruction) => {
 		axios
 			.post(
-				'https://cb-construction-backend.onrender.com/sites',
+				'https://cb-construction-backend-sei123.onrender.com/sites',
 				newConstruction
 			)
 			.then((res) => {
@@ -28,7 +28,7 @@ const App = () => {
 	// get construction data
 	const getData = () => {
 		axios
-			.get('https://cb-construction-backend.onrender.com/sites')
+			.get('https://cb-construction-backend-sei123.onrender.com/sites')
 			.then(
 				(res) => setConstruction(res.data),
 				(err) => console.error(err)
@@ -41,7 +41,7 @@ const App = () => {
 	const handleDelete = (event) => {
 		axios
 			.delete(
-				`https://cb-construction-backend.onrender.com/sites/${event.target.value}`
+				`https://cb-construction-backend-sei123.onrender.com/sites/${event.target.value}`
 			)
 			.then((res) => {
 				getData()
@@ -53,7 +53,7 @@ const App = () => {
 		console.log(editConstruction)
 		axios
 			.put(
-				`https://cb-construction-backend.onrender.com/sites/${editConstruction.id}`,
+				`https://cb-construction-backend-sei123.onrender.com/sites/${editConstruction.id}`,
 				editConstruction
 			)
 			.then((res) => {
