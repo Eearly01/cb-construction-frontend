@@ -52,6 +52,8 @@
 
 - we want to add a user log in and registers all thats left is to connect the two
 
+- sears component is almost thier need to make it filter through the cards and show only what the user searched for
+
 ## Notes for latter
 
 - we want to add things to the input form for other jobs on the site like street sweepings, machinery used, and people that worked on the job.
